@@ -1,0 +1,20 @@
+# /etc/sysctl.conf
+# 防止黑客对ip地址的攻击
+sysctl -w net.ipv4.conf.eth0.accept_source_route=0
+sysctl -w net.ipv4.conf.lo.accept_source_route=0
+sysctl -w net.ipv4.conf.default.accept_source_route=0
+sysctl -w net.ipv4.conf.all.accept_source_route=0
+
+#开启syn cookies，保护服务器免受syn-flood攻击，包括服务拒绝或者分布式服务拒绝攻击
+sysctl -w net.ipv4.tcp_syncookies=1
+sysctl -w net.ipv4.conf.eth0.secure_redirects=1
+sysctl -w net.ipv4.conf.lo.secure_redirects=1
+sysctl -w net.ipv4.conf.default.secure
+
+
+
+
+
+
+
+
